@@ -57,10 +57,10 @@ if (form) {
     if (sending) sending.style.display = 'block';
 
     const fd = new FormData(form);
-    // ensure reply-to header on admin email
+    // ensure reply-to header on admin email (so admin can reply easily)
     fd.set('_replyto', email);
 
-    // request FormSubmit to send an autoresponse to the visitor
+    // request FormSubmit to send an autoresponse to the visitor (JS backup)
     fd.set('_autoresponse', `Thanks ${name}! I received your message and will reply to ${email} shortly.`);
 
     try {
@@ -70,24 +70,29 @@ if (form) {
         headers: { 'Accept': 'application/json' }
       });
 
-      // try to read JSON body for debug and error info
-      const json = await res.json().catch(() => null);
+      // read full response text (some responses are HTML even when status 200)
+      const resText = await res.text().catch(() => null);
 
-      // debug: open browser console and check this object
-      console.log('FormSubmit response', res.status, json);
+      // try to parse JSON if possible
+      let json = null;
+      try { json = resText ? JSON.parse(resText) : null; } catch (err) { json = null; }
+
+      console.log('FormSubmit response status:', res.status);
+      console.log('FormSubmit response (parsed):', json);
+      console.log('FormSubmit response (raw):', resText);
 
       if (res.ok) {
-        // Note: res.ok means FormSubmit accepted the form — it does not guarantee delivery of autoresponse
+        // accepted by FormSubmit — still not a guarantee that email delivery happened
         form.reset();
         if (success) {
           success.style.display = 'block';
           setTimeout(() => { if (success) success.style.display = 'none'; }, 8000);
         }
       } else {
-        // Show server message if present for easier troubleshooting
-        const msg = json?.message || JSON.stringify(json) || 'Failed to send.';
+        // prefer any server message (JSON.message or raw text) to show useful hint
+        const serverMsg = json?.message || resText || 'Failed to send.';
         if (failure) {
-          failure.textContent = `${msg} Please email admin@cherylterry.com`;
+          failure.textContent = `${serverMsg} Please email admin@cherylterry.com`;
           failure.style.display = 'block';
         }
       }

@@ -127,7 +127,7 @@ z-index:1;
 .about-content{
 max-width:1200px;
 display:grid;
-grid-template-columns:400px 1fr;
+grid-template-columns:500px 1fr;
 gap:4rem;
 align-items:center;
 text-align:left;

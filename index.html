@@ -319,27 +319,28 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-content">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-content">
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
@@ -348,26 +349,39 @@
         <p>Phone: </p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+   <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
         });
+    });
 
-        // Form submission handler
-        //Backend DB not setup so Emails cannot be sent
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message!');
-            this.reset();
-        });
-    </script>
+    // Email forward using mailto:
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+
+        let mailtoLink = `mailto:admin@cherylterry.com?subject=New Message from ${encodeURIComponent(name)}&body=` +
+            encodeURIComponent(
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n\n" +
+                "Message:\n" + message
+            );
+
+        window.location.href = mailtoLink;
+
+        this.reset();
+    });
+</script>
+
 </body>
 </html>

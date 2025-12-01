@@ -1,29 +1,29 @@
 /* GLOBAL RESETS */
 
-{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-html {
-scroll-behavior: smooth;
-}
-body {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-color: #fff;
-background: #000;
--webkit-font-smoothing: antialiased;
-line-height: 1.5;
-overflow-x: hidden;
-}
-img {
-max-width: 100%;
-display: block;
-}
-a {
-color: inherit;
-text-decoration: none;
-}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+  html {
+  scroll-behavior: smooth;
+  }
+  body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
+  }
+  img {
+  max-width: 100%;
+  display: block;
+  }
+  a {
+  color: inherit;
+  text-decoration: none;
+  }
 
 /* NAVIGATION */
 nav {
@@ -60,7 +60,7 @@ letter-spacing: 0.3px;
 opacity: 0.85;
 transition: opacity 0.3s;
 }
-.nav-links a {
+.nav-links a:hover {
 opacity: 1;
 }
 .menu-btn {
@@ -100,7 +100,7 @@ text-align: center;
 
 /* HERO SECTION */
 .hero {
-background-image: url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
+background-image: url('[https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop)');
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
@@ -131,7 +131,7 @@ margin-top: 2rem;
 
 /* ABOUT SECTION */
 .about-section {
-background-image: url('https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop');
+background-image: url('[https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop)');
 min-height: 100vh;
 position: relative;
 background-size: cover;
@@ -186,7 +186,7 @@ min-height: 100vh;
 position: relative;
 background-size: cover;
 background-position: center;
-background-attachment: fixed; /* works on desktop */
+background-attachment: fixed;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -205,36 +205,32 @@ z-index: 2;
 max-width: 1200px;
 width: 100%;
 text-align: center;
+margin: 0 auto;
 }
-
-/* Offer Grid & Cards */
 .offer-section .offer-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 1.5rem;
 width: 100%;
 margin: 0 auto;
-position: relative;
-z-index: 2;
 }
 .offer-section .offer-card {
 background: rgba(255,255,255,0.08);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.15);
 padding: 1.5rem;
-border-radius: 4px;
+border-radius: 8px;
 text-align: center;
-transition: all 0.3s;
 width: 100%;
 box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: all 0.3s;
 }
 .offer-section .offer-card:hover {
 background: rgba(255,255,255,0.12);
 transform: translateY(-4px);
-}
-.offer-section h2, .offer-section .offer-intro, .offer-section .offer-closing {
-position: relative;
-z-index: 2;
 }
 
 /* ACCREDITATIONS SECTION */
@@ -244,7 +240,7 @@ padding: 6rem 2rem;
 position: relative;
 background-size: cover;
 background-position: center;
-background-attachment: fixed; /* works on desktop */
+background-attachment: fixed;
 }
 .accreditations-section::before {
 content: '';
@@ -259,51 +255,35 @@ z-index: 2;
 max-width: 1200px;
 margin: 0 auto;
 }
-
-/* Grid & Cards */
 .accreditations-section .accreditations-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1rem;
+gap: 1.5rem;
 width: 100%;
 margin: 0 auto;
-position: relative;
-z-index: 2;
 }
 .accreditations-section .accreditation-card {
 background: rgba(255,255,255,0.08);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.15);
-padding: 1.25rem;
-border-radius: 4px;
+padding: 1.5rem;
+border-radius: 8px;
 text-align: center;
-transition: all 0.3s;
 width: 100%;
 box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: center;
+transition: all 0.3s;
 }
 .accreditations-section .accreditation-card:hover {
 background: rgba(255,255,255,0.12);
 transform: translateY(-4px);
 }
 
-/* Mobile Fixes */
-@media (max-width: 768px) {
-.offer-section, .accreditations-section {
-background-attachment: scroll; /* mobile scroll fix */
-padding-left: 1rem;
-padding-right: 1rem;
-}
-.offer-section .offer-grid,
-.accreditations-section .accreditations-grid {
-grid-template-columns: 1fr;
-gap: 1rem;
-}
-}
-
-
 /* CONTACT SECTION */
 .contact-section {
-background-image: url('https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop');
+background-image: url('[https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop)');
 padding: 6rem 2rem;
 position: relative;
 background-size: cover;
@@ -348,31 +328,26 @@ opacity: 0.9;
 .form-group textarea {
 width: 100%;
 padding: 0.75rem;
-background: rgba(255,255,255,0.1);
+background: rgba(255,255,255,0.15);
 backdrop-filter: blur(10px);
-border: 1px solid rgba(255,255,255,0.2);
+border: 1px solid rgba(255,255,255,0.4);
 border-radius: 4px;
 color: #fff;
 font-size: 0.95rem;
 font-family: inherit;
 transition: all 0.3s;
+outline: none;
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
 color: rgba(255,255,255,0.5);
-}
-.form-group input,
-.form-group textarea {
-outline: none;
-background: rgba(255,255,255,0.15);
-border-color: rgba(255,255,255,0.4);
 }
 .form-group textarea {
 min-height: 120px;
 resize: vertical;
 }
 .btn-submit {
-background: rgba(255,255,255,0.15);
+background: rgba(255,255,255,0.25);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.3);
 color: #fff;
@@ -386,9 +361,6 @@ border-radius: 4px;
 transition: all 0.3s;
 display: block;
 margin: 0 auto;
-}
-.btn-submit {
-background: rgba(255,255,255,0.25);
 transform: translateY(-2px);
 }
 .form-status {
@@ -444,9 +416,12 @@ background-attachment: scroll;
 padding-left: 1rem;
 padding-right: 1rem;
 }
+.offer-section .offer-grid,
+.accreditations-section .accreditations-grid {
+grid-template-columns: 1fr;
+gap: 1rem;
+}
 .offer-section { padding: 4rem 1rem; min-height: auto; }
-.offer-grid { grid-template-columns: 1fr; gap: 1rem; }
-.offer-card { width: 100%; }
 .about-photo { height: 350px; }
 .nav-links.active {
 display: flex;

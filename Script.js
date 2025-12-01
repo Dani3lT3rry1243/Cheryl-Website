@@ -67,6 +67,8 @@ form.addEventListener('submit', async function(e){
 
     if(res.ok){
       form.reset();
+      // ✍️ UPDATED SUCCESS MESSAGE TEXT IN JAVASCRIPT
+      success.textContent = 'Message sent! Check your inbox for an automated confirmation reply.';
       success.style.display = 'block';
       setTimeout(() => success.style.display = 'none', 8000);
     } else {

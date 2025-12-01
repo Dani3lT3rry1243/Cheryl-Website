@@ -167,7 +167,7 @@ opacity:0.95;
 
 /* Offer Section */
 .offer-section {
-  background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image:url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   min-height:auto;
   padding:6rem 2rem;
   position:relative;

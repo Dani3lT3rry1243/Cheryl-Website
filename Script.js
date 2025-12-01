@@ -55,6 +55,10 @@ form.addEventListener('submit', async function(e){
   const fd = new FormData(form);
   fd.set('_replyto', email);
 
+  // Small patch: request FormSubmit to send an autoresponse to the visitor.
+  // Customize the message as you like.
+  fd.set('_autoresponse', `Thanks ${name}! I received your message and will reply to ${email} shortly.`);
+
   try {
     const res = await fetch(form.action, {
       method: 'POST',

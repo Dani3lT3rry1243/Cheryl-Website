@@ -51,7 +51,7 @@ opacity:0.85;
 transition:opacity 0.3s;
 }
 .nav-links a:hover{
-opacity:1; /* Fixes a typo in the original CSS */
+opacity:1; 
 }
 .menu-btn{
 display:none;
@@ -95,7 +95,7 @@ background-image:url('https://images.unsplash.com/photo-1595967444215-4901e84369
 position:relative;
 }
 .hero h1{
-/* Made hero title significantly smaller for mobile while still scaling up */
+/* Adjusted size for single-line fit on mobile */
 font-size:clamp(2rem,7vw,5rem);
 font-weight:300;
 letter-spacing:-1px;
@@ -103,7 +103,7 @@ line-height:1.1;
 margin-bottom:1.5rem;
 }
 .hero p{
-font-size:clamp(1rem,2.5vw,1.5rem); /* Slightly smaller base font */
+font-size:clamp(1rem,2.5vw,1.5rem); 
 font-weight:300;
 opacity:0.95;
 max-width:700px;
@@ -111,7 +111,7 @@ margin:0 auto 2.5rem;
 line-height:1.7;
 }
 .hero-subtitle{
-font-size:0.9rem; /* Slightly smaller subtitle */
+font-size:0.9rem; 
 text-transform:uppercase;
 letter-spacing:2px;
 opacity:0.8;
@@ -133,7 +133,6 @@ z-index:1;
 }
 .about-content{
 max-width:1200px;
-/* Default to grid layout */
 display:grid;
 grid-template-columns:500px 1fr;
 gap:4rem;
@@ -153,7 +152,7 @@ border-radius:4px;
 box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 .about-text h2{
-font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
+font-size:clamp(1.75rem,6vw,3.5rem); 
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -181,7 +180,7 @@ opacity:0.95;
   z-index:1;
 }
 .offer-section h2{
-font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
+font-size:clamp(1.75rem,6vw,3.5rem); 
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -189,7 +188,7 @@ position:relative;
 z-index:2;
 }
 .offer-intro{
-font-size:clamp(1rem,2.5vw,1.4rem); /* Adjusted minimum size */
+font-size:clamp(1rem,2.5vw,1.4rem); 
 font-weight:300;
 margin-bottom:3rem;
 opacity:0.95;
@@ -200,10 +199,9 @@ position:relative;
 z-index:2;
 }
 .offer-grid{
-/* Already good: auto-fit and minmax ensures columns wrap nicely */
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); /* Reduced min size */
-gap:1.5rem; /* Reduced gap */
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
+gap:1.5rem; 
 max-width:1200px;
 margin:0 auto 3rem;
 position:relative;
@@ -213,7 +211,7 @@ z-index:2;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.15);
-padding:1.5rem; /* Reduced padding */
+padding:1.5rem; 
 border-radius:4px;
 transition:all 0.3s;
 }
@@ -222,19 +220,19 @@ background:rgba(255,255,255,0.12);
 transform:translateY(-4px);
 }
 .offer-card h3{
-font-size:1.2rem; /* Slightly smaller h3 */
+font-size:1.2rem; 
 font-weight:400;
-margin-bottom:0.75rem; /* Reduced margin */
+margin-bottom:0.75rem; 
 letter-spacing:0.3px;
 }
 .offer-card p{
-font-size:0.95rem; /* Slightly smaller paragraph text */
+font-size:0.95rem; 
 font-weight:300;
 opacity:0.9;
-line-height:1.6; /* Reduced line-height */
+line-height:1.6; 
 }
 .offer-closing{
-font-size:1rem; /* Adjusted size */
+font-size:1rem; 
 font-weight:300;
 font-style:italic;
 margin-top:2rem;
@@ -261,7 +259,7 @@ background:rgba(0,0,0,0.5);
 z-index:1;
 }
 .accreditations-section h2{
-font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
+font-size:clamp(1.75rem,6vw,3.5rem);
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -270,10 +268,11 @@ z-index:2;
 }
 .accreditations-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); /* Reduced min size for better mobile fitting */
-gap:1rem; /* Reduced gap */
+/* Ensures cards stack and use full width on mobile */
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); 
+gap:1rem; 
 max-width:1000px;
-margin:0 auto 3rem;
+margin:0 auto 3rem; 
 position:relative;
 z-index:2;
 }
@@ -281,23 +280,24 @@ z-index:2;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.15);
-padding:1.25rem; /* Reduced padding */
+padding:1.25rem;
 border-radius:4px;
 text-align:center;
 transition:all 0.3s;
+width:100%; /* Ensures card fills its grid column fully */
 }
 .accreditation-card:hover{
 background:rgba(255,255,255,0.12);
 transform:translateY(-4px);
 }
 .accreditation-card h3{
-font-size:1.1rem; /* Slightly smaller h3 */
+font-size:1.1rem; 
 font-weight:400;
 margin-bottom:0.5rem;
 letter-spacing:0.3px;
 }
 .accreditation-card p{
-font-size:0.9rem; /* Slightly smaller paragraph text */
+font-size:0.9rem; 
 font-weight:300;
 opacity:0.9;
 }
@@ -306,7 +306,7 @@ text-align:center;
 margin-top:2rem;
 }
 .cc-logo{
-max-width:250px; /* Reduced max-width for logo */
+max-width:250px; 
 height:auto;
 margin:0 auto 1rem;
 transition:transform 0.3s;
@@ -316,15 +316,16 @@ filter:brightness(1.1);
 transform:scale(1.05);
 }
 .logo-caption{
-font-size:0.85rem; /* Smaller caption */
+font-size:0.85rem; 
 opacity:0.85;
 margin-top:0.5rem;
 }
 
 /* Contact Section */
 .contact-section{
-background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
-min-height:auto; /* Changed from 80vh to auto to ensure content fits */
+/* *** RESTORED/CHANGED IMAGE URL *** */
+background-image:url('https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop'); 
+min-height:auto;
 padding:6rem 2rem;
 position:relative;
 }
@@ -336,7 +337,7 @@ background:rgba(0,0,0,0.5);
 z-index:1;
 }
 .contact-section h2{
-font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
+font-size:clamp(1.75rem,6vw,3.5rem); 
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -344,33 +345,33 @@ position:relative;
 z-index:2;
 }
 .contact-form{
-max-width:500px; /* Slightly reduced max-width */
+max-width:500px; 
 margin:0 auto;
 position:relative;
 z-index:2;
 }
 .form-group{
-margin-bottom:1rem; /* Reduced margin */
+margin-bottom:1rem; 
 text-align:left;
 }
 .form-group label{
 display:block;
-font-size:0.85rem; /* Slightly smaller label */
+font-size:0.85rem; 
 font-weight:400;
 letter-spacing:0.5px;
-margin-bottom:0.3rem; /* Reduced margin */
+margin-bottom:0.3rem; 
 opacity:0.9;
 }
 .form-group input,
 .form-group textarea{
 width:100%;
-padding:0.75rem; /* Reduced padding */
+padding:0.75rem; 
 background:rgba(255,255,255,0.1);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.2);
 border-radius:4px;
 color:#fff;
-font-size:0.95rem; /* Slightly smaller font */
+font-size:0.95rem; 
 font-family:inherit;
 transition:all 0.3s;
 }
@@ -385,7 +386,7 @@ background:rgba(255,255,255,0.15);
 border-color:rgba(255,255,255,0.4);
 }
 .form-group textarea{
-min-height:120px; /* Reduced min-height */
+min-height:120px; 
 resize:vertical;
 }
 .btn-submit{
@@ -393,8 +394,8 @@ background:rgba(255,255,255,0.15);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.3);
 color:#fff;
-padding:0.75rem 2rem; /* Reduced padding */
-font-size:0.95rem; /* Slightly smaller font */
+padding:0.75rem 2rem; 
+font-size:0.95rem; 
 font-weight:400;
 letter-spacing:1px;
 text-transform:uppercase;
@@ -425,9 +426,9 @@ border:1px solid rgba(239,68,68,0.4);
 /* Footer */
 footer{
 background:#000;
-padding:2rem 1.5rem; /* Reduced padding */
+padding:2rem 1.5rem; 
 text-align:center;
-font-size:0.85rem; /* Smaller font */
+font-size:0.85rem; 
 opacity:0.8;
 border-top:1px solid rgba(255,255,255,0.1);
 }
@@ -436,7 +437,6 @@ footer p{margin:0.5rem 0}
 /* Responsive */
 @media (max-width:968px){
 .about-content{
-/* This ensures the photo and text stack (inline) */
 grid-template-columns:1fr;
 gap:3rem;
 text-align:center;
@@ -447,19 +447,15 @@ margin:0 auto;
 }
 }
 @media (max-width:768px){
-/* Hides desktop links and shows the menu button */
 .nav-links{display:none}
 .menu-btn{display:block}
-/* Changes fixed background attachment to scroll for performance on mobile */
 .fullscreen-section{
 background-attachment:scroll;
 padding:3rem 1.5rem;
 }
-/* Ensures the offer grid is a single column on small phones */
 .offer-grid{
 grid-template-columns:1fr;
 }
-/* Makes the about photo slightly shorter on small screens */
 .about-photo{
 height:350px;
 }

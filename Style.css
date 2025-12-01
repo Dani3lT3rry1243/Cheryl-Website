@@ -1,319 +1,219 @@
 /* Reset & Base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color:#fff;
-      background:#000;
-      -webkit-font-smoothing:antialiased;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color:#fff;
+  background:#000;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 
-    /* Navigation - minimal fixed */
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:100;
-      background:rgba(0,0,0,0.3);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-    .nav-inner{
-      max-width:1400px;
-      margin:0 auto;
-      padding:1.2rem 2rem;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .brand{
-      font-size:1.1rem;
-      font-weight:600;
-      letter-spacing:0.5px;
-      text-transform:uppercase;
-    }
-    .nav-links{
-      display:flex;
-      gap:2rem;
-      font-size:0.95rem;
-      letter-spacing:0.3px;
-    }
-    .nav-links a{
-      opacity:0.85;
-      transition:opacity 0.3s;
-    }
-    .nav-links a:hover{opacity:1}
-    .menu-btn{
-      display:none;
-      background:transparent;
-      border:0;
-      color:#fff;
-      font-size:1.5rem;
-      cursor:pointer;
-    }
+/* Navigation - minimal fixed */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.nav-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:1.2rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand{
+  font-size:1.1rem;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+}
+.nav-links{
+  display:flex;
+  gap:2rem;
+  font-size:0.95rem;
+  letter-spacing:0.3px;
+}
+.nav-links a{
+  opacity:0.85;
+  transition:opacity 0.3s;
+}
+.nav-links a:hover{opacity:1}
+.menu-btn{
+  display:none;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:1.5rem;
+  cursor:pointer;
+}
 
-    /* Full-screen sections with background images */
-    .fullscreen-section{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      padding:4rem 2rem;
-    }
-    .fullscreen-section::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-      z-index:1;
-    }
-    .content-wrapper{
-      position:relative;
-      z-index:2;
-      max-width:900px;
-      text-align:center;
-    }
+/* Full-screen sections with background images */
+.fullscreen-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  padding:4rem 2rem;
+}
+.fullscreen-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:1;
+}
+.content-wrapper{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  text-align:center;
+}
 
-    /* Hero Section - Butterfly */
-    .hero{
-      background-image:url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    }
-    .hero h1{
-      font-size:clamp(2.5rem,8vw,5rem);
-      font-weight:300;
-      letter-spacing:-1px;
-      line-height:1.1;
-      margin-bottom:1.5rem;
-    }
-    .hero p{
-      font-size:clamp(1.1rem,2.5vw,1.5rem);
-      font-weight:300;
-      opacity:0.95;
-      max-width:700px;
-      margin:0 auto 2.5rem;
-      line-height:1.7;
-    }
-    .hero-subtitle{
-      font-size:0.95rem;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      opacity:0.8;
-      margin-top:2rem;
-    }
+/* Hero Section - Butterfly */
+.hero{
+  background-image:url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
+}
+.hero h1{
+  font-size:clamp(2.5rem,8vw,5rem);
+  font-weight:300;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:1.5rem;
+}
+.hero p{
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  font-weight:300;
+  opacity:0.95;
+  max-width:700px;
+  margin:0 auto 2.5rem;
+  line-height:1.7;
+}
+.hero-subtitle{
+  font-size:0.95rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  opacity:0.8;
+  margin-top:2rem;
+}
 
-    /* About Section - Birds in sky with photo layout */
-    .about-section{
-      background-image:url('https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-      min-height:100vh;
-    }
-    .about-content{
-      max-width:1200px;
-      display:grid;
-      grid-template-columns:400px 1fr;
-      gap:4rem;
-      align-items:center;
-      text-align:left;
-    }
-    .about-photo-container{
-      position:relative;
-    }
-    .about-photo{
-      width:100%;
-      height:500px;
-      object-fit:cover;
-      border-radius:4px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.4);
-    }
-    .photo-placeholder{
-      width:100%;
-      height:500px;
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(10px);
-      border:2px dashed rgba(255,255,255,0.3);
-      border-radius:4px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:2rem;
-      font-size:0.9rem;
-      opacity:0.8;
-      line-height:1.6;
-    }
-    .about-text h2{
-      font-size:clamp(2rem,6vw,3.5rem);
-      font-weight:300;
-      margin-bottom:2rem;
-      letter-spacing:-0.5px;
-    }
-    .about-text p{
-      font-size:clamp(1rem,2vw,1.25rem);
-      font-weight:300;
-      line-height:1.8;
-      margin-bottom:1.5rem;
-      opacity:0.95;
-    }
+/* About Section - Birds in sky with photo layout */
+.about-section{
+  background-image:url('https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop');
+  min-height:100vh;
+}
+.about-content{
+  max-width:1200px;
+  display:grid;
+  grid-template-columns:400px 1fr;
+  gap:4rem;
+  align-items:center;
+  text-align:left;
+}
+.about-photo-container{
+  position:relative;
+}
+.about-photo{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:4px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.about-text h2{
+  font-size:clamp(2rem,6vw,3.5rem);
+  font-weight:300;
+  margin-bottom:2rem;
+  letter-spacing:-0.5px;
+}
+.about-text p{
+  font-size:clamp(1rem,2vw,1.25rem);
+  font-weight:300;
+  line-height:1.8;
+  margin-bottom:1.5rem;
+  opacity:0.95;
+}
 
-    /* Offer Section - Dragonfly */
-    .offer-section{
-      background-image:url('https://images.unsplash.com/photo-1593299611698-edd9cbf6f133?q=80&w=2400&auto=format&fit=crop');
-      min-height:auto;
-      padding:6rem 2rem;
-    }
-    .offer-section::before{
-      background:rgba(0,0,0,0.45);
-    }
-    .offer-section h2{
-      font-size:clamp(2rem,6vw,3.5rem);
-      font-weight:300;
-      margin-bottom:3rem;
-      letter-spacing:-0.5px;
-    }
-    .offer-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:2rem;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .offer-card{
-      background:rgba(255,255,255,0.08);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.15);
-      padding:2rem;
-      border-radius:4px;
-      transition:all 0.3s;
-    }
-    .offer-card:hover{
-      background:rgba(255,255,255,0.12);
-      transform:translateY(-4px);
-    }
-    .offer-card h3{
-      font-size:1.3rem;
-      font-weight:400;
-      margin-bottom:1rem;
-      letter-spacing:0.3px;
-    }
-    .offer-card p{
-      font-size:1rem;
-      font-weight:300;
-      opacity:0.9;
-      line-height:1.7;
-    }
+/* Offer Section - Dragonfly */
+.offer-section{
+  background-image:url('https://images.unsplash.com/photo-1593299611698-edd9cbf6f133?q=80&w=2400&auto=format&fit=crop');
+  min-height:auto;
+  padding:6rem 2rem;
+}
+.offer-section::before{
+  background:rgba(0,0,0,0.45);
+}
+.offer-section h2{
+  font-size:clamp(2rem,6vw,3.5rem);
+  font-weight:300;
+  margin-bottom:2rem;
+  letter-spacing:-0.5px;
+}
+.offer-intro{
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  font-weight:300;
+  margin-bottom:3rem;
+  opacity:0.95;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.offer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  max-width:1200px;
+  margin:0 auto 3rem;
+}
+.offer-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:2rem;
+  border-radius:4px;
+  transition:all 0.3s;
+}
+.offer-card:hover{
+  background:rgba(255,255,255,0.12);
+  transform:translateY(-4px);
+}
+.offer-card h3{
+  font-size:1.3rem;
+  font-weight:400;
+  margin-bottom:1rem;
+  letter-spacing:0.3px;
+}
+.offer-card p{
+  font-size:1rem;
+  font-weight:300;
+  opacity:0.9;
+  line-height:1.7;
+}
+.offer-closing{
+  font-size:1.1rem;
+  font-weight:300;
+  font-style:italic;
+  margin-top:3rem;
+  opacity:0.95;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-    /* Contact Section */
-    .contact-section{
-      background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
-      min-height:80vh;
-    }
-    .contact-section::before{
-      background:rgba(0,0,0,0.5);
-    }
-    .contact-section h2{
-      font-size:clamp(2rem,6vw,3.5rem);
-      font-weight:300;
-      margin-bottom:2rem;
-      letter-spacing:-0.5px;
-    }
-    .contact-form{
-      max-width:600px;
-      margin:0 auto;
-    }
-    .form-group{
-      margin-bottom:1.5rem;
-      text-align:left;
-    }
-    .form-group label{
-      display:block;
-      font-size:0.9rem;
-      font-weight:400;
-      letter-spacing:0.5px;
-      margin-bottom:0.5rem;
-      opacity:0.9;
-    }
-    .form-group input,
-    .form-group textarea{
-      width:100%;
-      padding:1rem;
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.2);
-      border-radius:4px;
-      color:#fff;
-      font-size:1rem;
-      font-family:inherit;
-      transition:all 0.3s;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder{
-      color:rgba(255,255,255,0.5);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus{
-      outline:none;
-      background:rgba(255,255,255,0.15);
-      border-color:rgba(255,255,255,0.4);
-    }
-    .form-group textarea{
-      min-height:150px;
-      resize:vertical;
-    }
-    .btn-submit{
-      background:rgba(255,255,255,0.15);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.3);
-      color:#fff;
-      padding:1rem 2.5rem;
-      font-size:1rem;
-      font-weight:400;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      cursor:pointer;
-      border-radius:4px;
-      transition:all 0.3s;
-    }
-    .btn-submit:hover{
-      background:rgba(255,255,255,0.25);
-      transform:translateY(-2px);
-    }
-    .form-status{
-      margin-top:1rem;
-      padding:1rem;
-      border-radius:4px;
-      display:none;
-      text-align:center;
-    }
-    .success{
-      background:rgba(34,197,94,0.2);
-      border:1px solid rgba(34,197,94,0.4);
-    }
-    .error{
-      background:rgba(239,68,68,0.2);
-      border:1px solid rgba(239,68,68,0.4);
-    }
-
-    /* Footer */
-    footer{
-      background:#000;
-      padding:3rem 2rem;
-      text-align:center;
-      font-size:0.9rem;
-      opacity:0.8;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    footer p{
-      margin:0.5rem 0;
-    }
-   /* Accreditations Section */
+/* Accreditations Section */
 .accreditations-section{
   background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
   min-height:auto;
@@ -378,30 +278,134 @@
   opacity:0.85;
   margin-top:0.5rem;
 }
-    /* Responsive */
-    @media (max-width:968px){
-      .about-content{
-        grid-template-columns:1fr;
-        gap:3rem;
-        text-align:center;
-      }
-      .about-photo-container{
-        max-width:400px;
-        margin:0 auto;
-      }
-    }
-    @media (max-width:768px){
-      .nav-links{display:none}
-      .menu-btn{display:block}
-      .fullscreen-section{
-        background-attachment:scroll;
-        padding:3rem 1.5rem;
-      }
-      .offer-grid{
-        grid-template-columns:1fr;
-      }
-      .about-photo,
-      .photo-placeholder{
-        height:400px;
-      }
-    }
+
+/* Contact Section */
+.contact-section{
+  background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
+  min-height:80vh;
+}
+.contact-section::before{
+  background:rgba(0,0,0,0.5);
+}
+.contact-section h2{
+  font-size:clamp(2rem,6vw,3.5rem);
+  font-weight:300;
+  margin-bottom:2rem;
+  letter-spacing:-0.5px;
+}
+.contact-form{
+  max-width:600px;
+  margin:0 auto;
+}
+.form-group{
+  margin-bottom:1.5rem;
+  text-align:left;
+}
+.form-group label{
+  display:block;
+  font-size:0.9rem;
+  font-weight:400;
+  letter-spacing:0.5px;
+  margin-bottom:0.5rem;
+  opacity:0.9;
+}
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:1rem;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:4px;
+  color:#fff;
+  font-size:1rem;
+  font-family:inherit;
+  transition:all 0.3s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+  color:rgba(255,255,255,0.5);
+}
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  background:rgba(255,255,255,0.15);
+  border-color:rgba(255,255,255,0.4);
+}
+.form-group textarea{
+  min-height:150px;
+  resize:vertical;
+}
+.btn-submit{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  padding:1rem 2.5rem;
+  font-size:1rem;
+  font-weight:400;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-radius:4px;
+  transition:all 0.3s;
+}
+.btn-submit:hover{
+  background:rgba(255,255,255,0.25);
+  transform:translateY(-2px);
+}
+.form-status{
+  margin-top:1rem;
+  padding:1rem;
+  border-radius:4px;
+  display:none;
+  text-align:center;
+}
+.success{
+  background:rgba(34,197,94,0.2);
+  border:1px solid rgba(34,197,94,0.4);
+}
+.error{
+  background:rgba(239,68,68,0.2);
+  border:1px solid rgba(239,68,68,0.4);
+}
+
+/* Footer */
+footer{
+  background:#000;
+  padding:3rem 2rem;
+  text-align:center;
+  font-size:0.9rem;
+  opacity:0.8;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+footer p{
+  margin:0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width:968px){
+  .about-content{
+    grid-template-columns:1fr;
+    gap:3rem;
+    text-align:center;
+  }
+  .about-photo-container{
+    max-width:400px;
+    margin:0 auto;
+  }
+}
+@media (max-width:768px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .fullscreen-section{
+    background-attachment:scroll;
+    padding:3rem 1.5rem;
+  }
+  .offer-grid{
+    grid-template-columns:1fr;
+  }
+  .about-photo{
+    height:400px;
+  }
+}

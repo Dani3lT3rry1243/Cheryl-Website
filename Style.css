@@ -150,13 +150,16 @@ max-width: 1200px;
 display: grid;
 grid-template-columns: 500px 1fr;
 gap: 4rem;
-align-items: center;
+align-items: center; /* Keeps image vertically centered */
 text-align: left;
 position: relative;
 z-index: 2;
 }
 .about-photo-container {
 position: relative;
+width: 100%; /* Ensures container takes full grid width */
+display: flex;
+justify-content: center; /* Centers image in its box if smaller */
 }
 .about-photo {
     width: 100%;
@@ -239,21 +242,24 @@ width: 100%;
 margin: 0 auto;
 }
 .offer-section .offer-card {
-background: rgba(255,255,255,0.08);
+min-height: 240px;
+background: rgba(255,255,255,0.12); /* Increased visibility */
 backdrop-filter: blur(10px);
-border: 1px solid rgba(255,255,255,0.15);
-padding: 1.5rem;
+border: 1px solid rgba(255,255,255,0.2);
+padding: 2rem 1.5rem;
 border-radius: 8px;
 text-align: center;
 width: 100%;
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+/* CHANGED: This aligns text to top, preventing 'random' look */
+justify-content: flex-start; 
+gap: 1.5rem;
 transition: all 0.3s;
 }
 .offer-section .offer-card:hover {
-background: rgba(255,255,255,0.12);
+background: rgba(255,255,255,0.18);
 transform: translateY(-4px);
 }
 
@@ -281,6 +287,8 @@ transform: translateY(-4px);
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 .testimonials-section h2 {
     font-size: clamp(1.75rem, 6vw, 3.5rem);
@@ -297,9 +305,11 @@ transform: translateY(-4px);
     width: 100%;
 }
 .testimonial-card {
-    background: rgba(255,255,255,0.08);
+    min-height: 220px; 
+    /* Increased opacity and border for better visibility */
+    background: rgba(255,255,255,0.12);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
     padding: 2rem;
     border-radius: 8px;
     text-align: left;
@@ -307,21 +317,22 @@ transform: translateY(-4px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* CHANGED: Aligns content to top */
+    justify-content: flex-start;
+    gap: 1rem;
     transition: all 0.3s;
-    min-height: 200px; /* Give empty boxes some height */
-    opacity: 0.9;
 }
 .testimonial-card h4 {
     font-size: 1.15rem;
-    margin-bottom: 0.75rem;
-    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fff;
 }
 .testimonial-card p {
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 300;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* ACCREDITATIONS SECTION */
@@ -363,7 +374,8 @@ width: 100%;
 margin: 0 auto;
 }
 .accreditations-section .accreditation-card {
-background: rgba(255,255,255,0.08);
+min-height: 160px; 
+background: rgba(255,255,255,0.1);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.15);
 padding: 1.5rem;
@@ -373,11 +385,12 @@ width: 100%;
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-justify-content: center;
+/* Keeps titles centered vertically */
+justify-content: center; 
 transition: all 0.3s;
 }
 .accreditations-section .accreditation-card:hover {
-background: rgba(255,255,255,0.12);
+background: rgba(255,255,255,0.15);
 transform: translateY(-4px);
 }
 .cognitive-coaching-logo {
@@ -385,6 +398,7 @@ transform: translateY(-4px);
     margin-top: 3rem;
     position: relative;
     z-index: 2;
+    width: 100%; /* Ensures it centers in the container */
 }
 .cc-logo {
     max-width: 250px; 

@@ -85,7 +85,6 @@ text-align:center;
 
 /* Hero Section */
 .hero{
-/* 💥 FIX: Removed brackets/extra link structure */
 background-image:url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
 position:relative;
 }
@@ -114,7 +113,6 @@ margin-top:2rem;
 
 /* About Section */
 .about-section{
-/* 💥 FIX: Removed brackets/extra link structure */
 background-image:url('https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop');
 min-height:100vh;
 position:relative;
@@ -162,8 +160,7 @@ opacity:0.95;
 
 /* Offer Section */
 .offer-section {
-/* This URL was already correct */
-  background-image: url('https://images.unsplash.com/photo-1708097051444-ed50161a0ddd?q=80&w=1134&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   min-height:auto;
   padding:6rem 2rem;
   position:relative;
@@ -242,7 +239,6 @@ z-index:2;
 
 /* Accreditations Section */
 .accreditations-section{
-/* 💥 FIX: Removed brackets/extra link structure */
 background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
 min-height:auto;
 padding:6rem 2rem;
@@ -318,7 +314,6 @@ margin-top:0.5rem;
 
 /* Contact Section */
 .contact-section{
-/* 💥 FIX: Removed brackets/extra link structure */
 background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
 min-height:80vh;
 position:relative;
@@ -444,7 +439,6 @@ margin:0 auto;
 .nav-links{display:none}
 .menu-btn{display:block}
 .fullscreen-section{
-/* ✅ FIX: Override fixed attachment for mobile compatibility */
 background-attachment:scroll;
 padding:3rem 1.5rem;
 }

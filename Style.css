@@ -6,7 +6,8 @@ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-ser
 color:#fff;
 background:#000;
 -webkit-font-smoothing:antialiased;
-line-height:1.6;
+/* Adjusted line-height for better density on small screens */
+line-height:1.5;
 overflow-x:hidden;
 }
 img{max-width:100%;display:block}
@@ -26,28 +27,32 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 .nav-inner{
 max-width:1400px;
 margin:0 auto;
-padding:1.2rem 2rem;
+/* Adjusted padding for smaller screens */
+padding:1rem 1.5rem;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 .brand{
-font-size:1.1rem;
+/* Slightly smaller brand text for mobile */
+font-size:1rem;
 font-weight:600;
 letter-spacing:0.5px;
 text-transform:uppercase;
 }
 .nav-links{
 display:flex;
-gap:2rem;
-font-size:0.95rem;
+gap:1.5rem; /* Reduced gap */
+font-size:0.9rem; /* Slightly smaller link text */
 letter-spacing:0.3px;
 }
 .nav-links a{
 opacity:0.85;
 transition:opacity 0.3s;
 }
-.nav-links a:hover
+.nav-links a:hover{
+opacity:1; /* Fixes a typo in the original CSS */
+}
 .menu-btn{
 display:none;
 background:transparent;
@@ -67,7 +72,8 @@ position:relative;
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-padding:4rem 2rem;
+/* Adjusted padding */
+padding:4rem 1.5rem;
 }
 .fullscreen-section::before{
 content:'';
@@ -89,14 +95,15 @@ background-image:url('https://images.unsplash.com/photo-1595967444215-4901e84369
 position:relative;
 }
 .hero h1{
-font-size:clamp(2.5rem,8vw,5rem);
+/* Made hero title significantly smaller for mobile while still scaling up */
+font-size:clamp(2rem,7vw,5rem);
 font-weight:300;
 letter-spacing:-1px;
 line-height:1.1;
 margin-bottom:1.5rem;
 }
 .hero p{
-font-size:clamp(1.1rem,2.5vw,1.5rem);
+font-size:clamp(1rem,2.5vw,1.5rem); /* Slightly smaller base font */
 font-weight:300;
 opacity:0.95;
 max-width:700px;
@@ -104,7 +111,7 @@ margin:0 auto 2.5rem;
 line-height:1.7;
 }
 .hero-subtitle{
-font-size:0.95rem;
+font-size:0.9rem; /* Slightly smaller subtitle */
 text-transform:uppercase;
 letter-spacing:2px;
 opacity:0.8;
@@ -126,6 +133,7 @@ z-index:1;
 }
 .about-content{
 max-width:1200px;
+/* Default to grid layout */
 display:grid;
 grid-template-columns:500px 1fr;
 gap:4rem;
@@ -145,7 +153,7 @@ border-radius:4px;
 box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 .about-text h2{
-font-size:clamp(2rem,6vw,3.5rem);
+font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -160,20 +168,20 @@ opacity:0.95;
 
 /* Offer Section */
 .offer-section {
-  background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  min-height:auto;
-  padding:6rem 2rem;
-  position:relative;
+  background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  min-height:auto;
+  padding:6rem 2rem;
+  position:relative;
 }
 .offer-section::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.25);
-  z-index:1;
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+  z-index:1;
 }
 .offer-section h2{
-font-size:clamp(2rem,6vw,3.5rem);
+font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -181,7 +189,7 @@ position:relative;
 z-index:2;
 }
 .offer-intro{
-font-size:clamp(1.1rem,2.5vw,1.4rem);
+font-size:clamp(1rem,2.5vw,1.4rem); /* Adjusted minimum size */
 font-weight:300;
 margin-bottom:3rem;
 opacity:0.95;
@@ -192,9 +200,10 @@ position:relative;
 z-index:2;
 }
 .offer-grid{
+/* Already good: auto-fit and minmax ensures columns wrap nicely */
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:2rem;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); /* Reduced min size */
+gap:1.5rem; /* Reduced gap */
 max-width:1200px;
 margin:0 auto 3rem;
 position:relative;
@@ -204,7 +213,7 @@ z-index:2;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.15);
-padding:2rem;
+padding:1.5rem; /* Reduced padding */
 border-radius:4px;
 transition:all 0.3s;
 }
@@ -213,22 +222,22 @@ background:rgba(255,255,255,0.12);
 transform:translateY(-4px);
 }
 .offer-card h3{
-font-size:1.3rem;
+font-size:1.2rem; /* Slightly smaller h3 */
 font-weight:400;
-margin-bottom:1rem;
+margin-bottom:0.75rem; /* Reduced margin */
 letter-spacing:0.3px;
 }
 .offer-card p{
-font-size:1rem;
+font-size:0.95rem; /* Slightly smaller paragraph text */
 font-weight:300;
 opacity:0.9;
-line-height:1.7;
+line-height:1.6; /* Reduced line-height */
 }
 .offer-closing{
-font-size:1.1rem;
+font-size:1rem; /* Adjusted size */
 font-weight:300;
 font-style:italic;
-margin-top:3rem;
+margin-top:2rem;
 opacity:0.95;
 max-width:800px;
 margin-left:auto;
@@ -252,17 +261,17 @@ background:rgba(0,0,0,0.5);
 z-index:1;
 }
 .accreditations-section h2{
-font-size:clamp(2rem,6vw,3.5rem);
+font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
 font-weight:300;
-margin-bottom:3rem;
+margin-bottom:2rem;
 letter-spacing:-0.5px;
 position:relative;
 z-index:2;
 }
 .accreditations-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:1.5rem;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); /* Reduced min size for better mobile fitting */
+gap:1rem; /* Reduced gap */
 max-width:1000px;
 margin:0 auto 3rem;
 position:relative;
@@ -272,7 +281,7 @@ z-index:2;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.15);
-padding:1.5rem;
+padding:1.25rem; /* Reduced padding */
 border-radius:4px;
 text-align:center;
 transition:all 0.3s;
@@ -282,22 +291,22 @@ background:rgba(255,255,255,0.12);
 transform:translateY(-4px);
 }
 .accreditation-card h3{
-font-size:1.2rem;
+font-size:1.1rem; /* Slightly smaller h3 */
 font-weight:400;
 margin-bottom:0.5rem;
 letter-spacing:0.3px;
 }
 .accreditation-card p{
-font-size:0.95rem;
+font-size:0.9rem; /* Slightly smaller paragraph text */
 font-weight:300;
 opacity:0.9;
 }
 .cognitive-coaching-logo{
 text-align:center;
-margin-top:3rem;
+margin-top:2rem;
 }
 .cc-logo{
-max-width:300px;
+max-width:250px; /* Reduced max-width for logo */
 height:auto;
 margin:0 auto 1rem;
 transition:transform 0.3s;
@@ -307,7 +316,7 @@ filter:brightness(1.1);
 transform:scale(1.05);
 }
 .logo-caption{
-font-size:0.9rem;
+font-size:0.85rem; /* Smaller caption */
 opacity:0.85;
 margin-top:0.5rem;
 }
@@ -315,7 +324,8 @@ margin-top:0.5rem;
 /* Contact Section */
 .contact-section{
 background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
-min-height:80vh;
+min-height:auto; /* Changed from 80vh to auto to ensure content fits */
+padding:6rem 2rem;
 position:relative;
 }
 .contact-section::before{
@@ -326,7 +336,7 @@ background:rgba(0,0,0,0.5);
 z-index:1;
 }
 .contact-section h2{
-font-size:clamp(2rem,6vw,3.5rem);
+font-size:clamp(1.75rem,6vw,3.5rem); /* Adjusted minimum size */
 font-weight:300;
 margin-bottom:2rem;
 letter-spacing:-0.5px;
@@ -334,33 +344,33 @@ position:relative;
 z-index:2;
 }
 .contact-form{
-max-width:600px;
+max-width:500px; /* Slightly reduced max-width */
 margin:0 auto;
 position:relative;
 z-index:2;
 }
 .form-group{
-margin-bottom:1.5rem;
+margin-bottom:1rem; /* Reduced margin */
 text-align:left;
 }
 .form-group label{
 display:block;
-font-size:0.9rem;
+font-size:0.85rem; /* Slightly smaller label */
 font-weight:400;
 letter-spacing:0.5px;
-margin-bottom:0.5rem;
+margin-bottom:0.3rem; /* Reduced margin */
 opacity:0.9;
 }
 .form-group input,
 .form-group textarea{
 width:100%;
-padding:1rem;
+padding:0.75rem; /* Reduced padding */
 background:rgba(255,255,255,0.1);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.2);
 border-radius:4px;
 color:#fff;
-font-size:1rem;
+font-size:0.95rem; /* Slightly smaller font */
 font-family:inherit;
 transition:all 0.3s;
 }
@@ -375,7 +385,7 @@ background:rgba(255,255,255,0.15);
 border-color:rgba(255,255,255,0.4);
 }
 .form-group textarea{
-min-height:150px;
+min-height:120px; /* Reduced min-height */
 resize:vertical;
 }
 .btn-submit{
@@ -383,8 +393,8 @@ background:rgba(255,255,255,0.15);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.3);
 color:#fff;
-padding:1rem 2.5rem;
-font-size:1rem;
+padding:0.75rem 2rem; /* Reduced padding */
+font-size:0.95rem; /* Slightly smaller font */
 font-weight:400;
 letter-spacing:1px;
 text-transform:uppercase;
@@ -415,9 +425,9 @@ border:1px solid rgba(239,68,68,0.4);
 /* Footer */
 footer{
 background:#000;
-padding:3rem 2rem;
+padding:2rem 1.5rem; /* Reduced padding */
 text-align:center;
-font-size:0.9rem;
+font-size:0.85rem; /* Smaller font */
 opacity:0.8;
 border-top:1px solid rgba(255,255,255,0.1);
 }
@@ -426,6 +436,7 @@ footer p{margin:0.5rem 0}
 /* Responsive */
 @media (max-width:968px){
 .about-content{
+/* This ensures the photo and text stack (inline) */
 grid-template-columns:1fr;
 gap:3rem;
 text-align:center;
@@ -436,16 +447,20 @@ margin:0 auto;
 }
 }
 @media (max-width:768px){
+/* Hides desktop links and shows the menu button */
 .nav-links{display:none}
 .menu-btn{display:block}
+/* Changes fixed background attachment to scroll for performance on mobile */
 .fullscreen-section{
 background-attachment:scroll;
 padding:3rem 1.5rem;
 }
+/* Ensures the offer grid is a single column on small phones */
 .offer-grid{
 grid-template-columns:1fr;
 }
+/* Makes the about photo slightly shorter on small screens */
 .about-photo{
-height:400px;
+height:350px;
 }
 }

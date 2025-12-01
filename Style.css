@@ -100,7 +100,7 @@ text-align: center;
 
 /* HERO SECTION */
 .hero {
-background-image: url('[https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop)');
+background-image: url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
@@ -131,7 +131,7 @@ margin-top: 2rem;
 
 /* ABOUT SECTION */
 .about-section {
-background-image: url('[https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop)');
+background-image: url('https://images.unsplash.com/photo-1691255287352-e272f187552f?q=80&w=2400&auto=format&fit=crop');
 min-height: 100vh;
 position: relative;
 background-size: cover;
@@ -182,7 +182,8 @@ opacity: 0.95;
 
 /* OFFER SECTION */
 .offer-section {
-    background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?auto=format&fit=crop&w=2400&q=80'); /* high-res, reliable image */
+    /* CORRECTED IMAGE URL */
+    background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?auto=format&fit=crop&w=2400&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -200,21 +201,6 @@ opacity: 0.95;
     background: rgba(0,0,0,0.25); /* subtle dark overlay for contrast */
     z-index: 1;
 }
-.contact-section {
-    background-image: url('https://images.unsplash.com/photo-1581092795367-02f5c8d5e6e6?auto=format&fit=crop&w=2400&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    padding: 6rem 2rem;
-}
-.contact-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5); /* subtle dark overlay for contrast */
-    z-index: 1;
-}
 .offer-section .content-wrapper {
 position: relative;
 z-index: 2;
@@ -222,6 +208,29 @@ max-width: 1200px;
 width: 100%;
 text-align: center;
 margin: 0 auto;
+}
+.offer-section h2 {
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.offer-section .offer-intro,
+.offer-section .offer-closing {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+.offer-section .offer-closing {
+    margin-top: 2rem;
 }
 .offer-section .offer-grid {
 display: grid;
@@ -251,7 +260,8 @@ transform: translateY(-4px);
 
 /* ACCREDITATIONS SECTION */
 .accreditations-section {
-background-image: url('[https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop)');
+/* TEMPORARY BACKGROUND IMAGE ADDED */
+background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
 padding: 6rem 2rem;
 position: relative;
 background-size: cover;
@@ -270,6 +280,15 @@ position: relative;
 z-index: 2;
 max-width: 1200px;
 margin: 0 auto;
+}
+.accreditations-section h2 {
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 .accreditations-section .accreditations-grid {
 display: grid;
@@ -296,10 +315,28 @@ transition: all 0.3s;
 background: rgba(255,255,255,0.12);
 transform: translateY(-4px);
 }
+.cognitive-coaching-logo {
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+.cc-logo {
+    /* NEW SIZE CONSTRAINT */
+    max-width: 250px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+.logo-caption {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
 
 /* CONTACT SECTION */
 .contact-section {
-background-image: url('[https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop)');
+/* TEMPORARY BACKGROUND IMAGE ADDED */
+background-image: url('https://images.unsplash.com/photo-1542435503-92144800ae76?q=80&w=2400&auto=format&fit=crop');
 padding: 6rem 2rem;
 position: relative;
 background-size: cover;

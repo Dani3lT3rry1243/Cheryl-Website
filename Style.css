@@ -181,12 +181,16 @@ opacity: 0.95;
 
 /* OFFER SECTION */
 .offer-section {
-background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=2400&auto=format&fit=crop');
+background-image: url('[https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=2400&auto=format&fit=crop)');
 min-height: 100vh;
 position: relative;
 background-size: cover;
 background-position: center;
-background-attachment: fixed;
+background-attachment: fixed; /* works on desktop */
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 4rem 1.5rem;
 }
 .offer-section::before {
 content: '';
@@ -198,18 +202,49 @@ z-index: 1;
 .offer-section .content-wrapper {
 position: relative;
 z-index: 2;
+max-width: 1200px;
+width: 100%;
 text-align: center;
-max-width: 900px;
+}
+
+/* Offer Grid & Cards */
+.offer-section .offer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+width: 100%;
+margin: 0 auto;
+position: relative;
+z-index: 2;
+}
+.offer-section .offer-card {
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.15);
+padding: 1.5rem;
+border-radius: 4px;
+text-align: center;
+transition: all 0.3s;
+width: 100%;
+box-sizing: border-box;
+}
+.offer-section .offer-card:hover {
+background: rgba(255,255,255,0.12);
+transform: translateY(-4px);
+}
+.offer-section h2, .offer-section .offer-intro, .offer-section .offer-closing {
+position: relative;
+z-index: 2;
 }
 
 /* ACCREDITATIONS SECTION */
 .accreditations-section {
-background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
+background-image: url('[https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop)');
 padding: 6rem 2rem;
 position: relative;
 background-size: cover;
 background-position: center;
-background-attachment: fixed;
+background-attachment: fixed; /* works on desktop */
 }
 .accreditations-section::before {
 content: '';
@@ -218,25 +253,24 @@ inset: 0;
 background: rgba(0,0,0,0.5);
 z-index: 1;
 }
-.accreditations-section h2 {
-font-size: clamp(1.75rem, 6vw, 3.5rem);
-font-weight: 300;
-margin-bottom: 2rem;
-letter-spacing: -0.5px;
+.accreditations-section .content-wrapper {
 position: relative;
 z-index: 2;
-text-align: center;
+max-width: 1200px;
+margin: 0 auto;
 }
-.accreditations-grid {
+
+/* Grid & Cards */
+.accreditations-section .accreditations-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 gap: 1rem;
-max-width: 1000px;
-margin: 0 auto 3rem;
+width: 100%;
+margin: 0 auto;
 position: relative;
 z-index: 2;
 }
-.accreditation-card {
+.accreditations-section .accreditation-card {
 background: rgba(255,255,255,0.08);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.15);
@@ -245,41 +279,27 @@ border-radius: 4px;
 text-align: center;
 transition: all 0.3s;
 width: 100%;
+box-sizing: border-box;
 }
-.accreditation-card {
+.accreditations-section .accreditation-card:hover {
 background: rgba(255,255,255,0.12);
 transform: translateY(-4px);
 }
-.accreditation-card h3 {
-font-size: 1.1rem;
-font-weight: 400;
-margin-bottom: 0.5rem;
-letter-spacing: 0.3px;
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+.offer-section, .accreditations-section {
+background-attachment: scroll; /* mobile scroll fix */
+padding-left: 1rem;
+padding-right: 1rem;
 }
-.accreditation-card p {
-font-size: 0.9rem;
-font-weight: 300;
-opacity: 0.9;
+.offer-section .offer-grid,
+.accreditations-section .accreditations-grid {
+grid-template-columns: 1fr;
+gap: 1rem;
 }
-.cognitive-coaching-logo {
-text-align: center;
-margin-top: 2rem;
 }
-.cc-logo {
-max-width: 250px;
-height: auto;
-margin: 0 auto 1rem;
-transition: transform 0.3s;
-filter: brightness(1.1);
-}
-.cc-logo {
-transform: scale(1.05);
-}
-.logo-caption {
-font-size: 0.85rem;
-opacity: 0.85;
-margin-top: 0.5rem;
-}
+
 
 /* CONTACT SECTION */
 .contact-section {

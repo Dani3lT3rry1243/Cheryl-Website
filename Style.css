@@ -186,12 +186,7 @@ min-height: 100vh;
 position: relative;
 background-size: cover;
 background-position: center;
-background-repeat: no-repeat;
-background-attachment: scroll;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 4rem 1rem;
+background-attachment: fixed;
 }
 .offer-section::before {
 content: '';

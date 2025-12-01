@@ -448,3 +448,10 @@ grid-template-columns:1fr;
 height:400px;
 }
 }
+.fullscreen-section::before,
+.about-section::before,
+.offer-section::before,
+.accreditations-section::before,
+.contact-section::before {
+  background: rgba(0,0,0,0.25); /* lighter overlay */
+}

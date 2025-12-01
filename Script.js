@@ -30,9 +30,6 @@ const sending = document.getElementById('sending');
 const success = document.getElementById('success');
 const failure = document.getElementById('failure');
 
-const destinationEmail = 'admin@cherylterry.com';
-const ajaxEndpoint = 'https://formsubmit.co/ajax/' + encodeURIComponent(destinationEmail);
-
 function hideMessages(){
   success.style.display = 'none';
   failure.style.display = 'none';
@@ -59,7 +56,7 @@ form.addEventListener('submit', async function(e){
   fd.set('_replyto', email);
 
   try {
-    const res = await fetch(ajaxEndpoint, {
+    const res = await fetch(form.action, {
       method: 'POST',
       body: fd,
       headers: { 'Accept': 'application/json' }
@@ -67,8 +64,6 @@ form.addEventListener('submit', async function(e){
 
     if(res.ok){
       form.reset();
-      // ✍️ UPDATED SUCCESS MESSAGE TEXT IN JAVASCRIPT
-      success.textContent = 'Message sent! Check your inbox for an automated confirmation reply.';
       success.style.display = 'block';
       setTimeout(() => success.style.display = 'none', 8000);
     } else {

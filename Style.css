@@ -313,7 +313,71 @@
     footer p{
       margin:0.5rem 0;
     }
-
+   /* Accreditations Section */
+.accreditations-section{
+  background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
+  min-height:auto;
+  padding:6rem 2rem;
+}
+.accreditations-section::before{
+  background:rgba(0,0,0,0.5);
+}
+.accreditations-section h2{
+  font-size:clamp(2rem,6vw,3.5rem);
+  font-weight:300;
+  margin-bottom:3rem;
+  letter-spacing:-0.5px;
+}
+.accreditations-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+  max-width:1000px;
+  margin:0 auto 3rem;
+}
+.accreditation-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:1.5rem;
+  border-radius:4px;
+  text-align:center;
+  transition:all 0.3s;
+}
+.accreditation-card:hover{
+  background:rgba(255,255,255,0.12);
+  transform:translateY(-4px);
+}
+.accreditation-card h3{
+  font-size:1.2rem;
+  font-weight:400;
+  margin-bottom:0.5rem;
+  letter-spacing:0.3px;
+}
+.accreditation-card p{
+  font-size:0.95rem;
+  font-weight:300;
+  opacity:0.9;
+}
+.cognitive-coaching-logo{
+  text-align:center;
+  margin-top:3rem;
+}
+.cc-logo{
+  max-width:300px;
+  height:auto;
+  margin:0 auto 1rem;
+  transition:transform 0.3s;
+  filter:brightness(1.1);
+}
+.cc-logo:hover{
+  transform:scale(1.05);
+}
+.logo-caption{
+  font-size:0.9rem;
+  opacity:0.85;
+  margin-top:0.5rem;
+}
     /* Responsive */
     @media (max-width:968px){
       .about-content{

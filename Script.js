@@ -1,13 +1,14 @@
 // Set current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Mobile menu toggle
+// Mobile menu toggle (your existing code)
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.querySelector('.nav-links');
 
-if(menuBtn && navLinks){
+if (menuBtn && navLinks) {
   menuBtn.addEventListener('click', () => {
-    if(navLinks.style.display === 'flex'){
+    if (navLinks.style.display === 'flex') {
       navLinks.style.display = '';
     } else {
       navLinks.style.display = 'flex';
@@ -30,56 +31,75 @@ const sending = document.getElementById('sending');
 const success = document.getElementById('success');
 const failure = document.getElementById('failure');
 
-function hideMessages(){
-  success.style.display = 'none';
-  failure.style.display = 'none';
+function hideMessages() {
+  if (success) success.style.display = 'none';
+  if (failure) failure.style.display = 'none';
 }
 
-form.addEventListener('submit', async function(e){
-  e.preventDefault();
-  hideMessages();
+if (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    hideMessages();
 
-  const name = form.elements['name'].value.trim();
-  const email = form.elements['email'].value.trim();
-  const message = form.elements['message'].value.trim();
+    const name = (form.elements['name'] && form.elements['name'].value || '').trim();
+    const email = (form.elements['email'] && form.elements['email'].value || '').trim();
+    const message = (form.elements['message'] && form.elements['message'].value || '').trim();
 
-  if(!name || !email || !message){
-    failure.textContent = 'Please complete all fields.';
-    failure.style.display = 'block';
-    return;
-  }
-
-  sendBtn.disabled = true;
-  sending.style.display = 'block';
-
-  const fd = new FormData(form);
-  fd.set('_replyto', email);
-
-  // Small patch: request FormSubmit to send an autoresponse to the visitor.
-  // Customize the message as you like.
-  fd.set('_autoresponse', `Thanks ${name}! I received your message and will reply to ${email} shortly.`);
-
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: fd,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if(res.ok){
-      form.reset();
-      success.style.display = 'block';
-      setTimeout(() => success.style.display = 'none', 8000);
-    } else {
-      const j = await res.json().catch(() => null);
-      failure.textContent = j?.message || 'Failed to send. Please email admin@cherylterry.com';
-      failure.style.display = 'block';
+    if (!name || !email || !message) {
+      if (failure) {
+        failure.textContent = 'Please complete all fields.';
+        failure.style.display = 'block';
+      }
+      return;
     }
-  } catch(err){
-    failure.textContent = 'Network error. Please email admin@cherylterry.com';
-    failure.style.display = 'block';
-  } finally {
-    sendBtn.disabled = false;
-    sending.style.display = 'none';
-  }
-});
+
+    if (sendBtn) sendBtn.disabled = true;
+    if (sending) sending.style.display = 'block';
+
+    const fd = new FormData(form);
+    // ensure reply-to header on admin email
+    fd.set('_replyto', email);
+
+    // request FormSubmit to send an autoresponse to the visitor
+    fd.set('_autoresponse', `Thanks ${name}! I received your message and will reply to ${email} shortly.`);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      // try to read JSON body for debug and error info
+      const json = await res.json().catch(() => null);
+
+      // debug: open browser console and check this object
+      console.log('FormSubmit response', res.status, json);
+
+      if (res.ok) {
+        // Note: res.ok means FormSubmit accepted the form — it does not guarantee delivery of autoresponse
+        form.reset();
+        if (success) {
+          success.style.display = 'block';
+          setTimeout(() => { if (success) success.style.display = 'none'; }, 8000);
+        }
+      } else {
+        // Show server message if present for easier troubleshooting
+        const msg = json?.message || JSON.stringify(json) || 'Failed to send.';
+        if (failure) {
+          failure.textContent = `${msg} Please email admin@cherylterry.com`;
+          failure.style.display = 'block';
+        }
+      }
+    } catch (err) {
+      console.error('Network/JS error:', err);
+      if (failure) {
+        failure.textContent = 'Network error. Please email admin@cherylterry.com';
+        failure.style.display = 'block';
+      }
+    } finally {
+      if (sendBtn) sendBtn.disabled = false;
+      if (sending) sending.style.display = 'none';
+    }
+  });
+}

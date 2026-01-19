@@ -92,14 +92,16 @@ if (form) {
         // prefer any server message (JSON.message or raw text) to show useful hint
         const serverMsg = json?.message || resText || 'Failed to send.';
         if (failure) {
-          failure.textContent = `${serverMsg} Please email admin@cherylterry.com`;
+          failure.textContent = `${serverMsg} Please email chezzaterry@yahoo.com
+`;
           failure.style.display = 'block';
         }
       }
     } catch (err) {
       console.error('Network/JS error:', err);
       if (failure) {
-        failure.textContent = 'Network error. Please email admin@cherylterry.com';
+        failure.textContent = 'Network error. Please email chezzaterry@yahoo.com
+';
         failure.style.display = 'block';
       }
     } finally {

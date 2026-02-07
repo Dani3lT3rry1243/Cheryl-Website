@@ -805,3 +805,46 @@ footer em {
 .contact-form label {
   color: #fff;
 }
+/* =========================
+   "What I Offer" BACKGROUND IMAGE SWITCH
+   ========================= */
+
+.offer-section {
+  background-image: url('images/dragonflies-hurrah.jpg'); /* desktop */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Tablet & smaller (<=1024px) */
+@media (max-width: 1024px) {
+  .offer-section {
+    background-image: url('https://images.unsplash.com/photo-1601758123927-27b5d1d6f7ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
+    /* Optional: add fallback color if needed */
+    background-color: #f4f4f4;
+  }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+  .offer-section {
+    background-image: url('https://images.unsplash.com/photo-1601758123927-27b5d1d6f7ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
+    background-position: top center;
+  }
+}
+
+/* Optional overlay to keep text readable */
+.offer-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25); /* subtle dark overlay */
+  z-index: 0;
+}
+
+.offer-section .content-wrapper {
+  position: relative; /* make text appear above overlay */
+  z-index: 1;
+}

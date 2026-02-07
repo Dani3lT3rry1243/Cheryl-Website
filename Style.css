@@ -690,3 +690,87 @@ footer em {
     object-fit: cover;
   }
 }
+/* =========================
+   CONTACT SECTION RESET
+   ========================= */
+
+.contact-section {
+  display: block;
+  padding: 4rem 1.5rem;
+}
+
+.contact-section .content-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Heading stays styled but aligned cleanly */
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Form groups */
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Inputs & textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Textarea height */
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit button */
+.btn-submit {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 700; /* bold as requested */
+  text-transform: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Status messages */
+.form-status {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+
+.form-status.success {
+  color: #2e7d32;
+}
+
+.form-status.error {
+  color: #c62828;
+}

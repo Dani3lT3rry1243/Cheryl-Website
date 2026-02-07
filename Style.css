@@ -1000,3 +1000,29 @@ footer em {
 .accreditation-card {
   background-color: rgba(255,255,255,0.06) !important;
 }
+/* ======================================================
+   ACCREDITATION LOGO SIZE NORMALISATION
+   ====================================================== */
+
+/* Default accreditation logo box */
+.accreditation-logo {
+  width: 140px;          /* visual width */
+  height: 90px;          /* visual height */
+  object-fit: contain;   /* no cropping */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Thinkific / certification logos tend to be visually large,
+   so gently scale them down */
+.accreditation-card img.accreditation-logo {
+  transform: scale(0.9);
+}
+
+/* Cognitive Coaching logos — exempt (allowed to be larger) */
+.accreditation-card img[src*="wixstatic"],
+.accreditation-card img[src*="thinkingcollaborative"] {
+  width: 160px;
+  height: auto;
+  transform: none;
+}

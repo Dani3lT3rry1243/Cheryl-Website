@@ -849,3 +849,22 @@ footer em {
   position: relative; /* make text appear above overlay */
   z-index: 1;
 }
+.accreditation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.accreditation-card img.accreditation-logo {
+  max-width: 120px; /* adjust as needed */
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.accreditations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}

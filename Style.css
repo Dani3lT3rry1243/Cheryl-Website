@@ -580,3 +580,113 @@ footer {
   text-align: center;
   display: block;
 }
+/* ======================================================
+   FONT IMPORTS — EXACTLY AS REQUESTED
+   ====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@500;600&display=swap');
+
+/* ======================================================
+   NAVBAR — BOLD, SAME FONT AS BOXES
+   ====================================================== */
+.brand,
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* ======================================================
+   HERO — EXACT FONT SYSTEM
+   ====================================================== */
+.hero h1,
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.hero-role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+}
+
+.hero-tagline,
+.hero p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ======================================================
+   SECTION TITLES — SAME AS HERO FONT
+   ====================================================== */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* ======================================================
+   ABOUT — FIRST 3 LINES CENTERED, SEPARATE
+   ====================================================== */
+.about-text p:nth-of-type(-n+3) {
+  text-align: center;
+  display: block;
+}
+
+/* ======================================================
+   WHAT I OFFER — INTRO + OUTRO BOLD
+   ====================================================== */
+.offer-intro,
+.offer-closing {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* ======================================================
+   TESTIMONIALS — STYLE ONLY (TEXT UNCHANGED)
+   ====================================================== */
+.testimonial-name,
+.testimonial-role,
+.testimonial-location {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ======================================================
+   SEND MESSAGE BUTTON — BIGGER + BOLD
+   ====================================================== */
+.btn-submit {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ======================================================
+   FOOTER — BOLD + LARGER SUBTEXT
+   ====================================================== */
+footer {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+footer em {
+  font-style: italic;
+}
+
+/* ======================================================
+   MOBILE IMAGE SCALING FIX
+   (DRAGONFLY / EAGLE / BUTTERFLY)
+   ====================================================== */
+@media (max-width: 699px) {
+  .about-photo,
+  .cc-logo {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,6 +1,7 @@
 /* ===================================
    GLOBAL RESETS & VARIABLES
    =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@500;600&display=swap');
 :root {
   --nav-height: 64px;
   --content-max: 1200px;

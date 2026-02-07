@@ -551,3 +551,32 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ===================================
+   REQUESTED TYPOGRAPHY CHANGES (PATCH)
+   =================================== */
+
+/* FOOTER — bold + larger subtext */
+footer {
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* SEND MESSAGE BUTTON — bigger, bold, same size as inputs */
+.btn-submit {
+  font-size: 1rem;      /* matches input font-size */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* NAVBAR SUBTEXT — bold, same font as boxes */
+.nav-links a {
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* ABOUT ME — first 3 lines centered & separated */
+.about-text p:nth-child(-n+3) {
+  text-align: center;
+  display: block;
+}

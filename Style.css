@@ -774,3 +774,34 @@ footer em {
 .form-status.error {
   color: #c62828;
 }
+/* =========================
+   TRANSPARENT CONTACT INPUTS
+   ========================= */
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.15); /* see-through */
+  backdrop-filter: blur(4px);            /* soft glass effect */
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;                           /* text readable on image */
+}
+
+/* Placeholder text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* On focus – slightly clearer */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Labels stay clean */
+.contact-form label {
+  color: #fff;
+}

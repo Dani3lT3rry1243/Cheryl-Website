@@ -1,7 +1,11 @@
 /* ===================================
+   FONT IMPORTS
+   =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@500;600&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ===================================
    GLOBAL RESETS & VARIABLES
    =================================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@500;600&display=swap');
 :root {
   --nav-height: 64px;
   --content-max: 1200px;
@@ -69,6 +73,7 @@ nav {
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links {
@@ -82,13 +87,14 @@ nav {
 .nav-links a {
   opacity: 0.9;
   transition: opacity 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
   opacity: 1;
 }
 
-/* Mobile nav hidden by default, toggled via .open class */
 .nav-links.open {
   display: flex;
   flex-direction: column;
@@ -148,18 +154,49 @@ nav {
 }
 
 /* ===================================
-   HERO (1) — butterfly (KEEP)
+   SECTION HEADINGS
    =================================== */
-.hero {
-  /* butterfly image — left unchanged */
-  background-image: url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  letter-spacing: -0.4px;
 }
 
 /* ===================================
-   ABOUT (2) — hawk / mountain (KEEP)
+   HERO (1) — butterfly
+   =================================== */
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1595967444215-4901e8436909?q=80&w=2400&auto=format&fit=crop');
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.hero-role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+}
+
+/* HERO TAGLINE — bigger font on desktop */
+.hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+  /* Increased size for desktop */
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+}
+
+/* ===================================
+   ABOUT (2) — birds picture (desktop)
    =================================== */
 .about-section {
-  background-image: url('https://images.unsplash.com/photo-1484704193309-27eaa53936a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  /* DESKTOP: birds picture restored */
+  background-image: url('https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2400&auto=format&fit=crop');
   min-height: 80vh;
   padding: 4rem 2rem;
 }
@@ -167,7 +204,7 @@ nav {
 .about-content {
   max-width: var(--content-max);
   display: grid;
-  grid-template-columns: 420px 1fr; /* image on the left, text on the right */
+  grid-template-columns: 420px 1fr;
   gap: 3.5rem;
   align-items: start;
   text-align: left;
@@ -186,28 +223,31 @@ nav {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
+/* ABOUT TITLE — centred */
 .about-text h2 {
   font-size: clamp(1.7rem, 5vw, 2.6rem);
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: -0.4px;
+  text-align: center; /* CHANGED: centred */
 }
 
+/* ABOUT BLURB — fully justified */
 .about-text p {
   font-size: clamp(1rem, 2vw, 1.05rem);
   font-weight: 300;
   line-height: 1.7;
   margin-bottom: 1rem;
   opacity: 0.95;
+  text-align: justify; /* CHANGED: fully justified */
 }
 
 /* ===================================
-   OFFER (3) — dragonfly (KEEP)
+   OFFER (3) — background images
    =================================== */
+/* DESKTOP: dragonflies local image */
 .offer-section {
-  /* dragonfly image — fixed full URL so it loads on desktop too */
-  background-image: url('https://images.unsplash.com/photo-1554945121-0c64ff46da04?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0');/*Dragon Fly*/
-
+  background-image: url('images/dragonflies-hurrah.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -215,23 +255,24 @@ nav {
   min-height: 50vh;
   position: relative;
 }
+
 .offer-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25); /* reduce opacity if it's too dark */
+  background: rgba(0, 0, 0, 0.25);
   z-index: 1;
   pointer-events: none;
 }
 
-/* Make sure your content sits above the overlay */
 .offer-section .content-wrapper {
   position: relative;
   z-index: 2;
 }
+
 .offer-section h2 {
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: -0.4px;
 }
@@ -246,16 +287,14 @@ nav {
   margin-right: auto;
 }
 
-/* Offer grid: explicit columns to make layout predictable */
 .offer-grid {
   display: grid;
   gap: 1.5rem;
   margin: 2rem auto;
   max-width: var(--content-max);
-  grid-template-columns: 1fr; /* mobile default */
+  grid-template-columns: 1fr;
 }
 
-/* Cards */
 .offer-card {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
@@ -287,10 +326,12 @@ nav {
   margin-top: auto;
 }
 
+/* OFFER CLOSING — bold, non-italic, subtitle style (Montserrat) */
 .offer-closing {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.05rem;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 600;
+  font-style: normal; /* CHANGED: not italic */
   margin-top: 2rem;
   opacity: 0.95;
   max-width: 900px;
@@ -300,18 +341,16 @@ nav {
 }
 
 /* ===================================
-   TESTIMONIALS (4) — second hawk image (NEW)
+   TESTIMONIALS (4)
    =================================== */
 .testimonials-section {
-  /* second hawk image — used here per your request */
-  background-image: url('https://images.unsplash.com/photo-1484704193309-27eaa53936a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');/*Change the bird to something*/
-
+  background-image: url('https://images.unsplash.com/photo-1484704193309-27eaa53936a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   padding: 4rem 2rem;
 }
 
 .testimonials-section h2 {
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
@@ -324,125 +363,181 @@ nav {
 }
 
 .testimonial-card {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 1.4rem;
-  border-radius: 6px;
   display: flex;
   flex-direction: column;
-  min-height: 160px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  min-height: 320px;
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .testimonial-card h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
+.testimonial-role,
+.testimonial-location {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  opacity: 0.85;
+  margin-bottom: 0.2rem;
+}
+
+/* TESTIMONIAL QUOTE — simple italic (Lato, not Playfair) */
+.testimonial-quote,
 .testimonial-card p {
-  margin-top: auto;
-  font-weight: 300;
-  line-height: 1.6;
+  font-family: 'Lato', sans-serif; /* CHANGED: simpler, more readable */
+  font-style: italic;
+  font-weight: 400; /* normal weight italic */
+  line-height: 1.65;
   opacity: 0.95;
+  margin-top: 0.75rem;
 }
 
 /* ===================================
-   ACCREDITATIONS (5) — mountain image (NEW)
+   ACCREDITATIONS (5)
    =================================== */
 .accreditations-section {
-  /* mountain image — placed as the 5th background per your request */
   background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop');
-
   padding: 4rem 2rem;
+}
+
+/* ACCREDITATIONS HEADING — same size as other h2 headings */
+.accreditations-section h2 {
+  font-size: clamp(1.9rem, 5vw, 2.6rem); /* CHANGED: matches other sections */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .accreditations-grid {
   display: grid;
-  gap: 1rem;
-  max-width: var(--content-max);
-  margin: 0 auto 1.5rem;
-  grid-template-columns: 1fr;
-}
-
-.accreditation-card {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 1rem;
-  border-radius: 6px;
-  text-align: center;
-}
-
-/* Logo */
-.cognitive-coaching-logo {
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   margin-top: 2rem;
 }
 
-.cc-logo {
-  max-width: 260px;
-  height: auto;
-  margin: 0 auto 0.75rem;
-  transition: transform 0.25s;
-  filter: brightness(1.1);
+.accreditation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
 }
 
-.cc-logo:hover {
-  transform: scale(1.03);
+.accreditation-logo {
+  width: 140px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
+
+/* CC logos */
+.accreditation-card img[src*="wixstatic"],
+.accreditation-card img[src*="thinkingcollaborative"] {
+  width: 160px;
+  height: auto;
+}
+
+/* Logo caption — REMOVED from HTML, no style needed */
 
 /* ===================================
-   CONTACT (6) — new link you gave (NEW)
+   CONTACT (6)
    =================================== */
 .contact-section {
   background-image: url('https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=2400&auto=format&fit=crop');
-
-  padding: 4rem 2rem;
+  display: block;
+  padding: 4rem 1.5rem;
 }
 
-.contact-form {
-  max-width: 600px;
+.contact-section .content-wrapper {
+  max-width: 640px;
   margin: 0 auto;
   text-align: left;
 }
 
-.form-group {
-  margin-bottom: 1.0rem;
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 0.35rem;
-  opacity: 0.95;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.9rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
   color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
   font-size: 1rem;
   font-family: inherit;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #fff;
 }
 
-.form-group textarea {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form textarea {
   min-height: 140px;
   resize: vertical;
 }
 
 .btn-submit {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.12);
   color: #fff;
-  padding: 0.85rem 1.6rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  border-radius: 6px;
   transition: all 0.18s;
 }
 
@@ -452,20 +547,20 @@ nav {
 }
 
 .form-status {
-  margin-top: 1rem;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
   padding: 0.9rem;
   border-radius: 6px;
   text-align: center;
-  font-size: 0.95rem;
 }
 
-.success {
+.form-status.success {
   background: rgba(34,197,94,0.12);
   border: 1px solid rgba(34,197,94,0.25);
   color: #dfffe6;
 }
 
-.error {
+.form-status.error {
   background: rgba(239,68,68,0.12);
   border: 1px solid rgba(239,68,68,0.25);
   color: #ffdede;
@@ -478,428 +573,60 @@ footer {
   background: #000;
   padding: 2.5rem 1.5rem;
   text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-/* ===================================
-   RESPONSIVE LAYOUT RULES
-   =================================== */
-@media (min-width: 700px) {
-  /* Offer: 2 columns from 700px */
-  .offer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Testimonials: 2 columns from 700px */
-  .testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Accreditations: 2 columns */
-  .accreditations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  /* Testimonials: 3 columns on large screens */
-  .testimonial-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Accreditations: 4 columns if enough space */
-  .accreditations-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* About keeps image on left */
-  .about-content {
-    grid-template-columns: 420px 1fr;
-  }
-}
-
-@media (max-width: 699px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .fullscreen-section {
-    padding: 2.5rem 1.25rem;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .about-photo {
-    height: 360px;
-    border-radius: 6px;
-    margin: 0 auto;
-  }
-
-  /* Ensure single column on small screens */
-  .offer-grid,
-  .testimonial-grid,
-  .accreditations-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* ===================================
-   REQUESTED TYPOGRAPHY CHANGES (PATCH)
-   =================================== */
-
-/* FOOTER — bold + larger subtext */
-footer {
   font-size: 1.05rem;
   font-weight: 600;
   opacity: 0.95;
-}
-
-/* SEND MESSAGE BUTTON — bigger, bold, same size as inputs */
-.btn-submit {
-  font-size: 1rem;      /* matches input font-size */
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-/* NAVBAR SUBTEXT — bold, same font as boxes */
-.nav-links a {
-  font-weight: 600;
-  font-family: inherit;
-}
-
-/* ABOUT ME — first 3 lines centered & separated */
-.about-text p:nth-child(-n+3) {
-  text-align: center;
-  display: block;
-}
-/* ======================================================
-   FONT IMPORTS — EXACTLY AS REQUESTED
-   ====================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@500;600&display=swap');
-
-/* ======================================================
-   NAVBAR — BOLD, SAME FONT AS BOXES
-   ====================================================== */
-.brand,
-.nav-links a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
-
-/* ======================================================
-   HERO — EXACT FONT SYSTEM
-   ====================================================== */
-.hero h1,
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.hero-role {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-}
-
-.hero-tagline,
-.hero p {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-/* ======================================================
-   SECTION TITLES — SAME AS HERO FONT
-   ====================================================== */
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-/* ======================================================
-   ABOUT — FIRST 3 LINES CENTERED, SEPARATE
-   ====================================================== */
-.about-text p:nth-of-type(-n+3) {
-  text-align: center;
-  display: block;
-}
-
-/* ======================================================
-   WHAT I OFFER — INTRO + OUTRO BOLD
-   ====================================================== */
-.offer-intro,
-.offer-closing {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-/* ======================================================
-   TESTIMONIALS — STYLE ONLY (TEXT UNCHANGED)
-   ====================================================== */
-.testimonial-name,
-.testimonial-role,
-.testimonial-location {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
-
-.testimonial-quote {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-/* ======================================================
-   SEND MESSAGE BUTTON — BIGGER + BOLD
-   ====================================================== */
-.btn-submit {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* ======================================================
-   FOOTER — BOLD + LARGER SUBTEXT
-   ====================================================== */
-footer {
-  font-size: 1.05rem;
-  font-weight: 600;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 footer em {
   font-style: italic;
 }
 
-/* ======================================================
-   MOBILE IMAGE SCALING FIX
-   (DRAGONFLY / EAGLE / BUTTERFLY)
-   ====================================================== */
-@media (max-width: 699px) {
-  .about-photo,
-  .cc-logo {
-    max-height: 300px;
-    width: 100%;
-    object-fit: cover;
+/* ===================================
+   RESPONSIVE — TABLET & MOBILE
+   =================================== */
+@media (min-width: 700px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .accreditations-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-/* =========================
-   CONTACT SECTION RESET
-   ========================= */
 
-.contact-section {
-  display: block;
-  padding: 4rem 1.5rem;
+@media (min-width: 1000px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .accreditations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-content {
+    grid-template-columns: 420px 1fr;
+  }
 }
 
-.contact-section .content-wrapper {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-/* Heading stays styled but aligned cleanly */
-.contact-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Form layout */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-/* Form groups */
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Labels */
-.contact-form label {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  font-size: 0.95rem;
-}
-
-/* Inputs & textarea */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 0.85rem;
-  font-size: 1rem;
-  font-family: inherit;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-}
-
-/* Textarea height */
-.contact-form textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-/* Submit button */
-.btn-submit {
-  margin-top: 1rem;
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-  font-weight: 700; /* bold as requested */
-  text-transform: none;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-
-/* Status messages */
-.form-status {
-  font-size: 0.95rem;
-  margin-top: 0.75rem;
-}
-
-.form-status.success {
-  color: #2e7d32;
-}
-
-.form-status.error {
-  color: #c62828;
-}
-/* =========================
-   TRANSPARENT CONTACT INPUTS
-   ========================= */
-
-.contact-form input,
-.contact-form textarea {
-  background: rgba(255, 255, 255, 0.15); /* see-through */
-  backdrop-filter: blur(4px);            /* soft glass effect */
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;                           /* text readable on image */
-}
-
-/* Placeholder text */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-/* On focus – slightly clearer */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Labels stay clean */
-.contact-form label {
-  color: #fff;
-}
-/* =========================
-   "What I Offer" BACKGROUND IMAGE SWITCH
-   ========================= */
-
-.offer-section {
-  background-image: url('images/dragonflies-hurrah.jpg'); /* desktop */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 0.5s ease-in-out;
-}
-
-/* Tablet & smaller (<=1024px) */
+/* ===================================
+   TABLET (≤1024px) — dragonfly background for About section
+   =================================== */
 @media (max-width: 1024px) {
-  .offer-section {
-    background-image: url('https://images.unsplash.com/photo-1601758123927-27b5d1d6f7ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
-    /* Optional: add fallback color if needed */
-    background-color: #f4f4f4;
+  .about-section {
+    /* Dragonfly image for tablet/smaller — https://unsplash.com/photos/9NP8YzXCpvs */
+    background-image: url('https://images.unsplash.com/photo-1498889444388-e67ea62c464b?q=80&w=1170&auto=format&fit=crop');
   }
 }
 
-/* Mobile (<=768px) */
-@media (max-width: 768px) {
-  .offer-section {
-    background-image: url('https://images.unsplash.com/photo-1601758123927-27b5d1d6f7ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
-    background-position: top center;
-  }
-}
-
-/* Optional overlay to keep text readable */
-.offer-section::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25); /* subtle dark overlay */
-  z-index: 0;
-}
-
-.offer-section .content-wrapper {
-  position: relative; /* make text appear above overlay */
-  z-index: 1;
-}
-.accreditation-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.accreditation-card img.accreditation-logo {
-  max-width: 120px; /* adjust as needed */
-  height: auto;
-  margin-top: 0.5rem;
-}
-
-.accreditations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.testimonial-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centers content vertically */
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  min-height: 320px; /* optional: gives uniform height for all cards */
-}
-
-.testimonial-card h4 {
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.testimonial-card p {
-  font-style: italic;
-  font-weight: 600; /* bold + italics */
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-/* ======================================================
-   FIX PACK — MOBILE NAV, TESTIMONIALS, ACCREDITATIONS
-   PASTE AT VERY BOTTOM OF CSS
-   ====================================================== */
-
-/* =========================
-   1️⃣ MOBILE NAV FIX
-   ========================= */
+/* ===================================
+   MOBILE (≤699px)
+   =================================== */
 @media (max-width: 699px) {
   .nav-links {
     display: none;
@@ -918,111 +645,64 @@ footer em {
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     z-index: 999;
   }
-}
 
-/* =========================
-   2️⃣ TESTIMONIAL CARDS — RESTORE DARK GLASS
-   ========================= */
-.testimonial-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  .menu-btn {
+    display: block;
+  }
 
-  padding: 1.5rem;
-  min-height: 320px;
+  .fullscreen-section {
+    padding: 2.5rem 1.25rem;
+  }
 
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* MOBILE HERO TAGLINE — bigger */
+  .hero-tagline {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
 
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
+  /* On mobile, revert to centred text for about blurb */
+  .about-text p {
+    text-align: center;
+  }
 
-.testimonial-card h4 {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
+  .about-text h2 {
+    text-align: center;
+  }
 
-.testimonial-card p {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.5;
-  opacity: 0.95;
-}
+  .about-photo {
+    height: 360px;
+    border-radius: 6px;
+    margin: 0 auto;
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
 
-/* =========================
-   3️⃣ ACCREDITATION GRID — HARD ALIGN
-   ========================= */
-.accreditations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
+  /* MOBILE ABOUT SECTION — dragonfly background (https://unsplash.com/photos/9NP8YzXCpvs) */
+  .about-section {
+    background-image: url('https://images.unsplash.com/photo-1498889444388-e67ea62c464b?q=80&w=800&auto=format&fit=crop');
+  }
 
-/* Cards */
-.accreditation-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  /* MOBILE OFFER SECTION — butterfly background (https://unsplash.com/photos/hteXWSF9jA4) */
+  .offer-section {
+    background-image: url('https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=800&auto=format&fit=crop');
+    background-position: top center;
+  }
 
-  text-align: center;
-  padding: 1.25rem;
+  .offer-grid,
+  .testimonial-grid,
+  .accreditations-grid {
+    grid-template-columns: 1fr;
+  }
 
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-}
-
-/* Logos — FORCE SAME SIZE */
-.accreditation-logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  display: block;
-}
-
-/* =========================
-   4️⃣ SAFETY OVERRIDE — PREVENT WHITE CARDS
-   ========================= */
-.testimonial-card,
-.accreditation-card {
-  background-color: rgba(255,255,255,0.06) !important;
-}
-/* ======================================================
-   ACCREDITATION LOGO SIZE NORMALISATION
-   ====================================================== */
-
-/* Default accreditation logo box */
-.accreditation-logo {
-  width: 140px;          /* visual width */
-  height: 90px;          /* visual height */
-  object-fit: contain;   /* no cropping */
-  display: block;
-  margin: 0 auto;
-}
-
-/* Thinkific / certification logos tend to be visually large,
-   so gently scale them down */
-.accreditation-card img.accreditation-logo {
-  transform: scale(0.9);
-}
-
-/* Cognitive Coaching logos — exempt (allowed to be larger) */
-.accreditation-card img[src*="wixstatic"],
-.accreditation-card img[src*="thinkingcollaborative"] {
-  width: 160px;
-  height: auto;
-  transform: none;
+  .cc-logo {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
 }

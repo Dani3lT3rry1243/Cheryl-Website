@@ -14,7 +14,7 @@
   <div class="nav-inner">
     <div class="brand hero-name">Cheryl Terry</div>
 
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#offer">What I Offer</a>
@@ -22,6 +22,8 @@
       <a href="#accreditations">Accreditations</a>
       <a href="#contact">Contact</a>
     </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
   </div>
 </nav>
 
@@ -46,7 +48,7 @@
       <h2>Transforming Your Dreams into Reality</h2>
 
       <div class="about-intro">
-        <p>I’m Cheryl Terry, a passionate and inspiring transformation coach dedicated to helping you to create your best life- The life you deserve!</p>
+        <p>I'm Cheryl Terry, a passionate and inspiring transformation coach dedicated to helping you to create your best life- The life you deserve!</p>
 
         <p>My coaching practice is built upon a strong foundation of experience. I worked for 25 years in education, and for the past 8 years, I have been working as a professional coach. I bring extensive experience in coaching conversations and am accredited as a Transformation Life Coach, Professional Life Coach and Master Life Coach, as well as being a trained Cognitive Coach.</p>
 
@@ -68,14 +70,14 @@
 
     <p class="offer-intro">
       Are you ready to stop dreaming for change and start creating it?<br>
-      It’s time to transform your life!
+      It's time to transform your life!
     </p>
 
     <div class="offer-grid">
 
       <div class="offer-card">
         <h3>Navigate Life Changes & Transitions</h3>
-        <p>Whether facing a career shift, a major relationship change, or a new phase of life, you’ll find the clarity and stability you need to navigate life's changes with grace, confidence, and purpose.</p>
+        <p>Whether facing a career shift, a major relationship change, or a new phase of life, you'll find the clarity and stability you need to navigate life's changes with grace, confidence, and purpose.</p>
       </div>
 
       <div class="offer-card">
@@ -101,7 +103,6 @@
       If you are ready to commit to radical growth, finding fulfillment and transforming the gap<br>
       between where you are and where you are meant to be-<br>
       You are ready to transform your life!
-
     </p>
 
   </div>
@@ -119,7 +120,7 @@
         <div class="testimonial-role">Retired (Teacher & Administrator)</div>
         <div class="testimonial-location">Hong Kong/Australia</div>
         <p class="testimonial-quote">
-          “I had a valuable experience with Cheryl, whose broad, open-ended questions uncovered numerous possibilities and led to important realisations about my assumptions and beliefs. Her attentive listening and clarifying questions greatly enriched our discussions, while her prompts inspired me to envision future aspects I had not previously considered. I'm genuinely grateful for this transformative coaching journey that helped solidify my insights.”
+          "I had a valuable experience with Cheryl, whose broad, open-ended questions uncovered numerous possibilities and led to important realisations about my assumptions and beliefs. Her attentive listening and clarifying questions greatly enriched our discussions, while her prompts inspired me to envision future aspects I had not previously considered. I'm genuinely grateful for this transformative coaching journey that helped solidify my insights."
         </p>
       </div>
 
@@ -128,9 +129,9 @@
         <div class="testimonial-role">Educator (Digital Learning Specialist)</div>
         <div class="testimonial-location">Australia</div>
         <p class="testimonial-quote">
-          “My session with Cheryl really helped me to articulate my priorities and be mindful of my goals moving forward in my career and life in general as I am navigating a huge transition of relocating to a new continent.
+          "My session with Cheryl really helped me to articulate my priorities and be mindful of my goals moving forward in my career and life in general as I am navigating a huge transition of relocating to a new continent.
           I really like that Cheryl didn't try to pretend that she was knowledgeable about my context or experience. She didn't need to be, everything was inside me, she just helped to draw it out and make it concrete.
-          I would highly recommend coaching from Cheryl for anyone that is juggling a lot in life and wants to move forward to live their best life, both professionally and personally.”
+          I would highly recommend coaching from Cheryl for anyone that is juggling a lot in life and wants to move forward to live their best life, both professionally and personally."
         </p>
       </div>
 
@@ -139,7 +140,7 @@
         <div class="testimonial-role">Director of College Advising</div>
         <div class="testimonial-location">USA</div>
         <p class="testimonial-quote">
-          “It was invaluable to take some time to really think about what makes my heart sing. In today’s world, it’s easy to get busy and forget to make space in our lives for the things that bring us joy and feed our souls. Cheryl, thank you for taking the time to help me think through my passions. Your encouragement and thoughtful guidance gave me clarity, confidence, and a renewed sense of purpose.”
+          "It was invaluable to take some time to really think about what makes my heart sing. In today's world, it's easy to get busy and forget to make space in our lives for the things that bring us joy and feed our souls. Cheryl, thank you for taking the time to help me think through my passions. Your encouragement and thoughtful guidance gave me clarity, confidence, and a renewed sense of purpose."
         </p>
       </div>
 
@@ -148,8 +149,8 @@
         <div class="testimonial-role">Chief Communications Officer</div>
         <div class="testimonial-location">The Netherlands / Mexico</div>
         <p class="testimonial-quote">
-          “Cheryl has a beautiful way of holding space that makes it easy to slow down, reflect and be truly honest with yourself. She helped me hear my own inner voice more clearly and uncover insights I had not fully acknowledged before.
-          The “aha” moments I experienced were not forced or intellectual. They felt real and transformative. Cheryl is the kind of coach who guides you and helps you meet yourself.”
+          "Cheryl has a beautiful way of holding space that makes it easy to slow down, reflect and be truly honest with yourself. She helped me hear my own inner voice more clearly and uncover insights I had not fully acknowledged before.
+          The "aha" moments I experienced were not forced or intellectual. They felt real and transformative. Cheryl is the kind of coach who guides you and helps you meet yourself."
         </p>
       </div>
 
@@ -198,23 +199,13 @@
         </a>
       </div>
 
-      <div class="accreditation-card">
-        <h3>Filler 1</h3>
-        <img src="images/placeholder-logo.png" class="accreditation-logo" alt="Filler 1">
-      </div>
-
-      <div class="accreditation-card">
-        <h3>Filler 2</h3>
-        <img src="images/placeholder-logo.png" class="accreditation-logo" alt="Filler 2">
-      </div>
-
     </div>
 
-    <p class="logo-caption">Click the Cognitive Coaching logos to learn more</p>
+    <!-- "Click the CC logo..." caption REMOVED -->
+    <!-- Filler 1 and Filler 2 cards REMOVED -->
+
   </div>
 </section>
-
-
 
 <!-- CONTACT -->
 <section id="contact" class="fullscreen-section contact-section">
@@ -243,6 +234,13 @@
   <p>© 2025 <em>cherylterry.com</em></p>
   <p><strong>Transformation Coach</strong></p>
 </footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
 
 </body>
 </html>

@@ -276,7 +276,7 @@ h2 {
 }
 
 .offer-intro {
-  font-size: clamp(1.25rem);
+  font-size: 1.25rem;
   font-weight: 300;
   margin-bottom: 1.5rem;
   opacity: 0.95;

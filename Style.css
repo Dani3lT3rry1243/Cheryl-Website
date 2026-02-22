@@ -187,8 +187,6 @@ h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-style: italic;
-  /* Increased size for desktop */
-  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
 }
 
 /* ===================================

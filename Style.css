@@ -327,7 +327,7 @@ h2 {
 /* OFFER CLOSING — bold, non-italic, subtitle style (Montserrat) */
 .offer-closing {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   font-weight: 600;
   font-style: normal; /* CHANGED: not italic */
   margin-top: 2rem;

@@ -716,3 +716,11 @@ footer em {
   display: block;         /* Remove vertical centering */
   padding: 5rem 2rem;     /* Keep spacing consistent */
 }
+@media (max-width: 699px) {
+  .offer-section {
+    background-image: url('Bird-Mobile.jpeg');
+    background-size: 100% 100%;   /* Forces full stretch */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

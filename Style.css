@@ -620,11 +620,12 @@ footer em {
     /* Dragonfly image for tablet/smaller — https://unsplash.com/photos/9NP8YzXCpvs */
     background-image: url('https://images.unsplash.com/photo-1498889444388-e67ea62c464b?q=80&w=1170&auto=format&fit=crop');
   }
-   .offer-section {
+  .offer-section {
   background-image: url('Bird-Mobile.jpeg');
-  background-size: cover;        /* Ensures full width coverage */
-  background-position: center;   /* Better centering */
-  background-repeat: no-repeat;  /* Prevents tiling */
+  background-size: contain;   /* Shows full image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;     /* Fills empty space */
 }
 }
 

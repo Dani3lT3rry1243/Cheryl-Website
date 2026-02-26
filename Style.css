@@ -710,3 +710,8 @@ footer em {
     object-fit: cover;
   }
 }
+.testimonials-section {
+  min-height: auto;       /* Remove forced full height */
+  display: block;         /* Remove vertical centering */
+  padding: 5rem 2rem;     /* Keep spacing consistent */
+}

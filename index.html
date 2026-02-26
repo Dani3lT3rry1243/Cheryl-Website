@@ -270,7 +270,7 @@
   <p><strong>Transformation Coach</strong></p>
 </footer>
 
-  <script>
+<script>
   // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
@@ -294,7 +294,7 @@
 
   if (form) {
     form.addEventListener('submit', async function (e) {
-      e.preventDefault(); // 🚨 THIS stops the redirect
+      e.preventDefault(); // Stop page redirect
 
       hideMessages();
 
@@ -312,16 +312,22 @@
 
         if (res.ok) {
           form.reset();
-          if (success) success.style.display = 'block';
+          if (success) {
+            success.textContent = "✅ Your message has been sent! Thank you.";
+            success.style.display = 'block';
+            // auto-hide after 8 seconds
+            setTimeout(() => { if (success) success.style.display = 'none'; }, 8000);
+          }
         } else {
+          const text = await res.text();
           if (failure) {
-            failure.textContent = 'Something went wrong. Please email chezzaterry@yahoo.com';
+            failure.textContent = `❌ Something went wrong. Please email chezzaterry@yahoo.com.`;
             failure.style.display = 'block';
           }
         }
       } catch (err) {
         if (failure) {
-          failure.textContent = 'Network error. Please email chezzaterry@yahoo.com';
+          failure.textContent = '❌ Network error. Please email chezzaterry@yahoo.com';
           failure.style.display = 'block';
         }
       } finally {
